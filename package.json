@@ -19,5 +19,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/HQarroum/Gravatar/issues"
+  },
+  "dependencies": {
+    "blueimp-md5": "^1.1.1"
   }
 }
