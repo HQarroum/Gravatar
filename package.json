@@ -1,0 +1,23 @@
+{
+  "name": "gravatar.js",
+  "version": "1.0.0",
+  "description": "A promise-based Gravatar client for Node and the browser",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HQarroum/Gravatar.git"
+  },
+  "keywords": [
+    "gravatar",
+    "avatar",
+    "avatar.js"
+  ],
+  "author": "Halim Qarroum <hqm.post@gmail.com> (http://halim.qarroum.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HQarroum/Gravatar/issues"
+  }
+}
