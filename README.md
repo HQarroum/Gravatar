@@ -82,7 +82,8 @@ It is possible through the Gravatar API to retrieve a collection of profile obje
 
 ```javascript
 gravatar.get.profiles('foo@bar').then(function (profiles) {
-    // Use the profiles array.
+    // `profiles` is an array of profile objects associated
+    // with the given e-mail address.
 }, function (err) {
     // An error occurred.
 });
@@ -96,8 +97,8 @@ Simply generating an URL given an e-mail address does not mean this URL does act
 gravatar.resolve('foo@bar').then(function (url) {
   // `url` will contain the url to the *main* thumbnail
   // associated with the given e-mail address.
-}).catch(function (err) {                                                                                            // An error occurred, which *might* indicate that
-   // the E-mail address is not associated with any
-   // gravatar.
+}).catch(function (err) {                                                                                          // An error occurred, which might indicate that
+ // the e-mail address is not associated with any
+ // gravatar.
 });
 ```
