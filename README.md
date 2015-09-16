@@ -97,8 +97,9 @@ Simply generating an URL given an e-mail address does not mean this URL does act
 gravatar.resolve('foo@bar').then(function (url) {
   // `url` will contain the url to the *main* thumbnail
   // associated with the given e-mail address.
-}).catch(function (err) {                                                                                          // An error occurred, which might indicate that
- // the e-mail address is not associated with any
- // gravatar.
+}).catch(function (err) {
+  // An error occurred, which might indicate that
+  // the e-mail address is not associated with any
+  // gravatar.
 });
 ```
