@@ -59,13 +59,13 @@ You will need to include the Gravatar library as well as its dependencies in ord
 To do so, you simply need to pass an e-mail address to the library :
 
 ```javascript
-var url = gravatar.get.url('foo@bar.com');
+var url = gravatar.get.url('foo@bar');
 ```
 
 It is also possible to pass several options to this method in order to customize the behaviour of the Gravatar interface :
 
 ```javascript
-var url = gravatar.get.url('foo@bar.com', { defaultIcon: '404', size: 200 });
+var url = gravatar.get.url('foo@bar', { defaultIcon: '404', size: 200 });
 ```
 
 You will find below the list of supported parameters you can pass to the library.
@@ -75,3 +75,29 @@ Option key    | Description
 `defaultIcon` | The adopted behaviour when no image is associated with the given e-mail address.
 `size`        | The size of the image in pixers
 `rating`      | Defines whether to retrieve an avatar given its category, or rating. Take a look [here](https://en.gravatar.com/site/implement/images#rating) for more informations.
+
+### Retrieving user profiles
+
+It is possible through the Gravatar API to retrieve a collection of profile objects associated with a user. Using this library it is possible to retrieve this collection using the user e-mail address.
+
+```javascript
+gravatar.get.profiles('foo@bar').then(function (profiles) {
+    // Use the profiles array.
+}, function (err) {
+    // An error occurred.
+});
+```
+
+### Resolving an e-mail address
+
+Simply generating an URL given an e-mail address does not mean this URL does actually point to an existing resource. As such, this library provides an interface used to resolve the given e-mail address to a valid avatar URL.
+
+```javascript
+gravatar.resolve('foo@bar').then(function (url) {
+  // `url` will contain the url to the *main* thumbnail
+  // associated with the given e-mail address.
+}).catch(function (err) {                                                                                            // An error occurred, which *might* indicate that
+   // the E-mail address is not associated with any
+   // gravatar.
+});
+```
