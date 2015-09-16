@@ -23,5 +23,55 @@ The [`es6-promise`](https://www.npmjs.com/package/es6-promise) module is used th
 
 ## Usage
 
-### Building an avatar URL
+### Requiring the library
 
+The entry point of the library can be required through different means, each one depending on the environment in which the library is executed.
+
+#### Node
+
+Simply use the `require` interface to load the library :
+
+```javascript
+var gravatar = require('gravatar.js');
+```
+
+#### AMD / Require.js
+
+```javascript
+define(['gravatar.js'], function (gravatar) {
+  // Use the library.
+});
+```
+
+#### Browser
+
+You will need to include the Gravatar library as well as its dependencies in order through `script` tags, which you will typically include at the end of your document.
+
+```html
+<!-- This example assumes you installed the library using Bower -->
+<script src="bower_components/es6-promise-polyfill/promise.min.js"></script>
+<script src="bower_components/popsicle/popsicle.js"></script>
+<script src="bower_components/gravatar.js/lib/index.js"></script>
+```
+
+### Associating an e-mail with an avatar
+
+To do so, you simply need to pass an e-mail address to the library :
+
+```javascript
+var url = gravatar.get.url('foo@bar.com');
+```
+
+It is also possible to pass several options to this method in order to customize the behaviour of the Gravatar interface :
+
+```javascript
+var url = gravatar.get.url('foo@bar.com', { defaultIcon: '404', size: 200 });
+```
+
+You will find below the list of supported parameters you can pass to the library.
+
+Option key    | Description
+------------- | -------------
+`defaultIcon` | The adopted behaviour when no image is associated with the given e-mail address.
+`size`        | The size of the image in pixers
+`rating`      | Defines whether to retrieve an avatar given its category, or rating. Take a look [here](https://en.gravatar.com/site/implement/images#rating) for more informations.
