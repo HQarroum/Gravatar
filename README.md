@@ -82,10 +82,10 @@ It is possible through the Gravatar API to retrieve a collection of profile obje
 
 ```javascript
 gravatar.get.profiles('foo@bar').then(function (profiles) {
-    // `profiles` is an array of profile objects associated
-    // with the given e-mail address.
+  // `profiles` is an array of profile objects associated
+  // with the given e-mail address.
 }, function (err) {
-    // An error occurred.
+  // An error occurred.
 });
 ```
 
