@@ -2,12 +2,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://beta.home.awox.com:8081/assets/css/panel.css">
-<link rel="stylesheet" href="http://beta.home.awox.com:8081/assets/css/cover.page.css">
-<script src="bower_components/proxify-url/lib/index.js"></script>
-<script src="bower_components/blueimp-md5/js/md5.min.js"></script>
-<script src="bower_components/es6-promise/promise.min.js"></script>
-<script src="bower_components/popsicle/popsicle.js"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="assets/components/proxify-url/lib/index.js"></script>
+<script src="assets/components/blueimp-md5/js/md5.min.js"></script>
+<script src="assets/components/es6-promise/promise.min.js"></script>
+<script src="assets/components/popsicle/popsicle.js"></script>
 <script src="lib/index.js"></script>
 <script language="javascript">
   var url = gravatar.get.url('foo@bar');
@@ -28,7 +28,7 @@
 <body>
 
   <div id="cover">
-      <img src="http://beta.home.awox.com:8081/assets/images/covers/cover-2.jpg" alt="cover">
+      <img src="http://helenebrunet.com/wp-content/uploads/2014/04/Streets-Night-City-Lights.jpg">
       <div id="overlay"></div>
   </div>
   
@@ -41,14 +41,14 @@
         </div>
         <div class="row margin-bottom-md hidden-xs">
           <div class="avatar">
-            <img width="110" height="110" src="http://beta.home.awox.com:8081/assets/images/default-avatar.gif" alt="avatar">
+            <img width="130" height="130" src="http://beta.home.awox.com:8081/assets/images/default-avatar.gif" alt="avatar">
           </div>
         </div>
         <!-- Form -->
         <div class="row">
-          <form action="/login" method="post" role="form">
+          <form action="#" method="post" role="form">
             <div class="form-group">
-              <input id="email" type="email" name="email" class="form-control input unbordered-bottom rounded-top" placeholder="E-mail" autofocus="" required="">
+              <input id="email" type="email" name="email" class="form-control input rounded-top" placeholder="Enter an e-mail address" autofocus="" required>
             </div>
             <button type="submit" class="btn btn-front btn-danger">Search</button>
           </form>
@@ -56,5 +56,13 @@
       </div>
     </div>
   </div>
+
+  <footer class="visible-lg">
+    <ul class="list-inline">
+      <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar" target="_blank">Fork me on Github</a></li>
+      <li><a class="no-link-color" href="https://github.com/HQarroum" target="_blank">About the author</a></li>
+      <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar/blob/master/LICENSE" target="_blank">License</a></li>
+    </ul>
+  </footer>
 </body>
 </html>
