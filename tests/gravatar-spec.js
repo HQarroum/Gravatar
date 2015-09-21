@@ -2,7 +2,13 @@ var should  = require('should');
 var gravatar = require('../lib');
 
 describe('The gravatar module', function () {
-        
+    
+    /**
+     * Setting asynchronous function timeout
+     * to 5 seconds.
+     */
+    this.timeout(5 * 1000);
+
     /**
      * Gravatar URL creation.
      */
