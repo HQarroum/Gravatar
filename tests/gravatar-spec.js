@@ -1,7 +1,7 @@
 var should  = require('should');
 var gravatar = require('../lib');
 
-describe('The proxify function', function () {
+describe('The gravatar module', function () {
         
     /**
      * Gravatar URL creation.
