@@ -1,6 +1,4 @@
-<p align="center">
-  <img width="200" src="http://systemout.net/images/Gravatar-icon.png" />
-</p>
+![Logo](assets/logo.png)
 
 # Gravatar
 [![Build Status](https://travis-ci.org/HQarroum/Gravatar.svg?branch=master)](https://travis-ci.org/HQarroum/Gravatar)
