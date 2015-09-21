@@ -2,7 +2,7 @@
   "name": "gravatar-demo",
   "version": "1.0.0",
   "authors": [
-    "Halim Qarroum <hqarroum@awox.com>"
+    "Halim Qarroum <hqm.post@gmail.com>"
   ],
   "description": "Demonstration of the gravatar library.",
   "main": "index.html",
@@ -22,6 +22,7 @@
     "tests"
   ],
   "dependencies": {
+    "gravatar.js": "~1.0.0",
     "requirejs": "~2.1.20"
   }
 }
