@@ -73,9 +73,9 @@ You will find below the list of supported parameters you can pass to the library
 
 Option key    | Description
 ------------- | -------------
-`defaultIcon` | The adopted behaviour when no image is associated with the given e-mail address.
-`size`        | The size of the image in pixers
-`rating`      | Defines whether to retrieve an avatar given its category, or rating. Take a look [here](https://en.gravatar.com/site/implement/images#rating) for more informations.
+`defaultIcon` | The adopted behaviour when no image is associated with the given e-mail address. The default value is `404`.
+`size`        | The size of the image in pixels. The default value is *80* pixels.
+`rating`      | Defines whether to retrieve an avatar given its category, or rating. Take a look [here](https://en.gravatar.com/site/implement/images#rating) for more informations. The default value is `G`.
 
 ### Retrieving user profiles
 
