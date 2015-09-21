@@ -1,4 +1,6 @@
-![Logo](assets/logo.png)
+<p align="center">
+  <img src="assets/logo.png" />
+</p>
 
 # Gravatar
 [![Build Status](https://travis-ci.org/HQarroum/Gravatar.svg?branch=master)](https://travis-ci.org/HQarroum/Gravatar)
