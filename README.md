@@ -116,3 +116,5 @@ gravatar.resolve('foo@bar').then(function (url) {
   // gravatar.
 });
 ```
+
+> Similarly to when you generate an URL, you can pass an optional object as a second argument to the `.resolve` method in order to specify how you would like the avatar to be resolved. If the avatar has been resolved, it will be passed as an argument to the success callback.
