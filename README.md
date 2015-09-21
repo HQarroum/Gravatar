@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="200" src="http://systemout.net/images/Gravatar-icon.png" />
+</p>
+
 # Gravatar
 A promise-based Gravatar client for Node and the browser.
 
