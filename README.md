@@ -49,6 +49,7 @@ You will need to include the Gravatar library as well as its dependencies in ord
 
 ```html
 <!-- This example assumes you installed the library using Bower -->
+<script src="bower_components/proxify-url/lib/index.js"></script>
 <script src="bower_components/blueimp-md5/js/md5.min.js"></script>
 <script src="bower_components/es6-promise-polyfill/promise.min.js"></script>
 <script src="bower_components/popsicle/popsicle.js"></script>
