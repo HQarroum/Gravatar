@@ -25,5 +25,9 @@
     "es6-promise": "^3.0.2",
     "popsicle": "^1.1.0",
     "proxify-url": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "should": "^7.1.0"
   }
 }
