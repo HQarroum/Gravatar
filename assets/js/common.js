@@ -13,6 +13,12 @@ requirejs.config({
         'es6-promise': 'components/es6-promise/promise.min',
         'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min',
         'bootstrap': 'components/bootstrap/dist/js/bootstrap.min'
+    },
+
+    shim: {
+        'bootstrap': {
+            deps: [ 'jquery' ]
+        }
     }
 });
 
