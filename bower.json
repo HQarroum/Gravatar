@@ -1,0 +1,24 @@
+{
+  "name": "gravatar-demo",
+  "version": "1.0.0",
+  "authors": [
+    "Halim Qarroum <hqarroum@awox.com>"
+  ],
+  "description": "Demonstration of the gravatar library.",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "gravatar"
+  ],
+  "license": "MIT",
+  "homepage": "https://hqarroum.github.io/Gravatar/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

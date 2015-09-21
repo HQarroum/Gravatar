@@ -1,0 +1,60 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://beta.home.awox.com:8081/assets/css/panel.css">
+<link rel="stylesheet" href="http://beta.home.awox.com:8081/assets/css/cover.page.css">
+<script src="bower_components/proxify-url/lib/index.js"></script>
+<script src="bower_components/blueimp-md5/js/md5.min.js"></script>
+<script src="bower_components/es6-promise/promise.min.js"></script>
+<script src="bower_components/popsicle/popsicle.js"></script>
+<script src="lib/index.js"></script>
+<script language="javascript">
+  var url = gravatar.get.url('foo@bar');
+  
+  gravatar.get.profiles('hqm.post@gmail.com').then(function (result) {
+    console.log('Result', result);
+  }, function (err) {
+    console.log(err);
+  });
+  console.log(url);
+  
+  gravatar.resolve('hqm.post@gmail.com').then(function (url) {
+    console.log('Resolved', url);
+  }).catch(function (err) {
+    console.log('Rejected', err);
+  });
+</script>
+<body>
+
+  <div id="cover">
+      <img src="http://beta.home.awox.com:8081/assets/images/covers/cover-2.jpg" alt="cover">
+      <div id="overlay"></div>
+  </div>
+  
+  <div class="container">
+    <div class="vertical-center-row">
+      <div class="text-center">
+        <!-- Main title -->
+        <div class="row margin-bottom-md title">
+          <strong>Gravatar</strong>.js
+        </div>
+        <div class="row margin-bottom-md hidden-xs">
+          <div class="avatar">
+            <img width="110" height="110" src="http://beta.home.awox.com:8081/assets/images/default-avatar.gif" alt="avatar">
+          </div>
+        </div>
+        <!-- Form -->
+        <div class="row">
+          <form action="/login" method="post" role="form">
+            <div class="form-group">
+              <input id="email" type="email" name="email" class="form-control input unbordered-bottom rounded-top" placeholder="E-mail" autofocus="" required="">
+            </div>
+            <button type="submit" class="btn btn-front btn-danger">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
