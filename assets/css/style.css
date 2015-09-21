@@ -15,7 +15,7 @@ body {
 }
 
 .margin-bottom-sm {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 /**
@@ -27,6 +27,10 @@ body {
     color: white;
 }
 
+.no-link-effect:visited {
+    color: white;
+}
+
 .no-link-color {
     color: white;
 }
@@ -35,7 +39,11 @@ body {
     color: white;
 }
 
-.no-link-effect:visited {
+.no-link-color:focus {
+    color: white;
+}
+
+.no-link-color:visited {
     color: white;
 }
 
