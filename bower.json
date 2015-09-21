@@ -22,6 +22,7 @@
     "tests"
   ],
   "dependencies": {
+    "bootstrap": "~3.3.5",
     "gravatar.js": "~1.0.1",
     "requirejs": "~2.1.20"
   }

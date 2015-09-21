@@ -11,7 +11,8 @@ requirejs.config({
         'popsicle': 'components/popsicle/popsicle',
         'proxify-url': 'components/proxify-url/lib/index',
         'es6-promise': 'components/es6-promise/promise.min',
-        'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min'
+        'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min',
+        'bootstrap': 'components/bootstrap/dist/js/bootstrap.min'
     }
 });
 
@@ -19,7 +20,7 @@ requirejs.config({
  * Requiring the common assets for our application,
  * and registering the routes for the AJAX queries.
  */
-define(['gravatar', 'jquery'], function (gravatar) {
+define(['gravatar', 'jquery', 'bootstrap'], function (gravatar) {
     
     var options = {
         /**
