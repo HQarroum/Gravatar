@@ -50,6 +50,22 @@ define(['gravatar', 'jquery'], function (gravatar) {
         var image = $('.avatar img');
 
         /**
+         * When the image is loaded, we update the image element.
+         */
+        var done = function (url) {
+            image.attr('src', url);
+        };
+
+        /**
+         * Called back when an error was hit while loading
+         * the avatar. This might be the result of the user
+         * not having a Gravatar profile.
+         */
+        var fail = function () {
+            image.attr('src', image.data('default'));
+        };
+
+        /**
          * Listening on the input and loading the avatar
          * `options.delay` milliseconds later.
          */
@@ -58,11 +74,9 @@ define(['gravatar', 'jquery'], function (gravatar) {
             
             clearTimeout(handle);
             handle = setTimeout(function () {
-                var url = gravatar.get.url(self.val(), {
-                    size: 200,
-                    defaultIcon: image.data('default')
-                });
-                image.attr('src', url);
+                gravatar.resolve(self.val(), options.gravatar)
+                    .then(done)
+                    .catch(fail);
             }, options.delay);
         });
     });

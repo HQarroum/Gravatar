@@ -1,6 +1,6 @@
 {
   "name": "gravatar.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/HQarroum/Gravatar",
   "authors": [
     "Halim Qarroum <hqm.post@gmail.com>"
@@ -31,13 +31,13 @@
     "popsicle": "~1.1.0",
     "proxify-url": "~1.0.0"
   },
-  "_release": "1.0.1",
+  "_release": "1.0.2",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.1",
-    "commit": "22c30625e6d601d8fe1cbea38f2f58f56478e718"
+    "tag": "1.0.2",
+    "commit": "d8e873c90fa246e6283cdc914334e02b9a78eb8d"
   },
   "_source": "git://github.com/HQarroum/Gravatar.git",
-  "_target": "~1.0.0",
+  "_target": "~1.0.1",
   "_originalSource": "gravatar.js"
 }

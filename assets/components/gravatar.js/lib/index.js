@@ -15,17 +15,17 @@
  (function (name, definition) {
     if (typeof define === 'function' && define.amd) {
         // Defining the module in an AMD fashion.
-        define(['blueimp-md5', 'popsicle', 'proxify-url', 'es6-promise'], definition);
+        define(['blueimp-md5', 'es6-promise', 'popsicle', 'proxify-url'], definition);
     } else if (typeof module !== 'undefined' && module.exports) {
         // Exporting the module for Node.js/io.js.
         module.exports = definition(
           require('blueimp-md5').md5,
+          require('es6-promise'),
           require('popsicle'),
-          require('proxify-url'),
-	  require('es6-promise')  
+          require('proxify-url')
         );
     } else {
-        var instance = definition(this.md5, this.popsicle, this.proxify, this.ES6Promise);
+        var instance = definition(this.md5, this.ES6Promise, this.popsicle, this.proxify);
         var old      = this[name];
 
         /**
@@ -38,7 +38,7 @@
         };
         this[name] = instance;
     }
- })('gravatar', function (md5, popsicle, proxify, es6) {
+ })('gravatar', function (md5, es6, popsicle, proxify) {
   
   /**
    * Polyfill ES6 Promise.
@@ -168,14 +168,18 @@
      * @returns a promise resolved if the avatar was able to
      * be retrieved, and rejected if the retrieval failed.
      */
-    resolve: function (email) {
-      var url = profileUrl(email, { format: 'json' });
+    resolve: function (email, options) {
+      var url = this.get.url(email, options);
 
       return new Promise(function (resolve, reject) {
-        this.get.profiles(email).then(function (profiles) {
-          resolve(profiles[0].thumbnailUrl);
+        popsicle.head(url).then(function (response) {
+	  if (response.status === 200) {
+	    resolve(url);
+	  } else {
+            reject('Avatar does not exist');
+	  }
         }, reject);
-      }.bind(this));
+      });
     }
   };
  });

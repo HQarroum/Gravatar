@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="http://systemout.net/images/Gravatar-icon.png" />
+  <img src="assets/logo.png" />
 </p>
 
 # Gravatar
@@ -7,6 +7,10 @@
 [![Code Climate](https://codeclimate.com/github/HQarroum/Gravatar/badges/gpa.svg)](https://codeclimate.com/github/HQarroum/Gravatar)
 
 A promise-based Gravatar client for Node and the browser.
+
+Current version: **1.0.2**
+
+Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 
 ## Install
 
@@ -112,3 +116,5 @@ gravatar.resolve('foo@bar').then(function (url) {
   // gravatar.
 });
 ```
+
+> Similarly to when you generate an URL, you can pass an optional object as a second argument to the `.resolve` method in order to specify how you would like the avatar to be resolved. If the avatar has been resolved, it will be passed as an argument to the success callback.
