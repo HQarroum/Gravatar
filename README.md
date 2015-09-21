@@ -8,7 +8,7 @@
 
 A promise-based Gravatar client for Node and the browser.
 
-Current version: **1.0.1**
+Current version: **1.0.2**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 
