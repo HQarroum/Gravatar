@@ -22,7 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "gravatar.js": "~1.0.0",
+    "gravatar.js": "~1.0.1",
     "requirejs": "~2.1.20"
   }
 }

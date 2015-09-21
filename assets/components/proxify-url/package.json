@@ -1,0 +1,36 @@
+{
+  "name": "proxify-url",
+  "version": "1.0.0",
+  "description": "An YQL wrapper used to generate a proxy URL to a given resource.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HQarroum/proxify-url.git"
+  },
+  "keywords": [
+    "proxify",
+    "url",
+    "yql",
+    "cors"
+  ],
+  "author": "Halim Qarroum <hqm.post@gmail.com> (http://halim.qarroum.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HQarroum/proxify-url/issues"
+  },
+  "homepage": "https://github.com/HQarroum/proxify-url#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-mocha-test": "^0.12.7",
+    "load-grunt-tasks": "^3.2.0",
+    "mocha": "^2.3.2",
+    "should": "^7.1.0",
+    "time-grunt": "^1.2.1"
+  }
+}

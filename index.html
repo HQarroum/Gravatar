@@ -3,28 +3,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="assets/components/proxify-url/lib/index.js"></script>
-<script src="assets/components/blueimp-md5/js/md5.min.js"></script>
-<script src="assets/components/es6-promise/promise.min.js"></script>
-<script src="assets/components/popsicle/popsicle.js"></script>
-<script src="lib/index.js"></script>
-<script language="javascript">
-  var url = gravatar.get.url('foo@bar');
-  
-  gravatar.get.profiles('hqm.post@gmail.com').then(function (result) {
-    console.log('Result', result);
-  }, function (err) {
-    console.log(err);
-  });
-  console.log(url);
-  
-  gravatar.resolve('hqm.post@gmail.com').then(function (url) {
-    console.log('Resolved', url);
-  }).catch(function (err) {
-    console.log('Rejected', err);
-  });
-</script>
 <body>
 
   <div id="cover">
@@ -41,7 +19,7 @@
         </div>
         <div class="row margin-bottom-md hidden-xs">
           <div class="avatar">
-            <img width="130" height="130" src="http://beta.home.awox.com:8081/assets/images/default-avatar.gif" alt="avatar">
+            <img width="130" height="130" src="assets/images/default-avatar.gif" data-default="https://hqarroum.github.io/Gravatar/assets/images/default-avatar.gif" alt="avatar">
           </div>
         </div>
         <!-- Form -->
@@ -64,5 +42,7 @@
       <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar/blob/master/LICENSE" target="_blank">License</a></li>
     </ul>
   </footer>
+  <!-- Loading our main page entry point -->
+  <script data-main="assets/js/common.js" src="assets/components/requirejs/require.js"></script>
 </body>
 </html>

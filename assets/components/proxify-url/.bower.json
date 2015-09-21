@@ -1,0 +1,38 @@
+{
+  "name": "proxify-url",
+  "version": "1.0.0",
+  "homepage": "https://github.com/HQarroum/proxify-url",
+  "authors": [
+    "Halim Qarroum <hqm.post@gmail.com>"
+  ],
+  "description": "An YQL wrapper used to generate a proxy URL to a given resource.",
+  "main": "lib/index.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "proxify",
+    "url",
+    "yql",
+    "cors"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": "7a9c70241aa906f414a1b7dd67731c4687038379"
+  },
+  "_source": "git://github.com/HQarroum/proxify-url.git",
+  "_target": "~1.0.0",
+  "_originalSource": "proxify-url"
+}

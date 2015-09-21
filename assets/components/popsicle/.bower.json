@@ -1,0 +1,38 @@
+{
+  "name": "popsicle",
+  "main": "popsicle.js",
+  "version": "1.1.1",
+  "homepage": "https://github.com/blakeembrey/popsicle",
+  "authors": [
+    "Blake Embrey <hello@blakeembrey.com>"
+  ],
+  "description": "Simple HTTP requests for node and the browser",
+  "keywords": [
+    "request",
+    "ajax",
+    "http",
+    "promise",
+    "node",
+    "browser",
+    "agent"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "src",
+    "node_modules",
+    "bower_components",
+    "test",
+    "coverage",
+    "typings"
+  ],
+  "_release": "1.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.1",
+    "commit": "cc5b402bdb1056853eecff8d3a215d4881cf48ae"
+  },
+  "_source": "git://github.com/blakeembrey/popsicle.git",
+  "_target": "~1.1.0",
+  "_originalSource": "popsicle"
+}
