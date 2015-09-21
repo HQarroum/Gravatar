@@ -54,6 +54,7 @@ define(['gravatar', 'jquery'], function (gravatar) {
          */
         var done = function (url) {
             image.attr('src', url);
+            showMessage('success');
         };
 
         /**
@@ -63,6 +64,29 @@ define(['gravatar', 'jquery'], function (gravatar) {
          */
         var fail = function () {
             image.attr('src', image.data('default'));
+            showMessage('error');
+        };
+
+        /**
+         * Called back each time an input event is
+         * triggered by the `email` input element.
+         */
+        var onInput = function (input) {
+            if (input.val().length) {
+                showMessage('typing');
+            } else {
+                showMessage('welcome');
+            }
+            image.attr('src', image.data('default'));
+        };
+
+        /**
+         * Displays the message associated with
+         * the given `className`.
+         */
+        var showMessage = function (className) {
+            $('.message').css('display', 'none');
+            $('.' + className).css('display', 'block');
         };
 
         /**
@@ -78,6 +102,10 @@ define(['gravatar', 'jquery'], function (gravatar) {
                     .then(done)
                     .catch(fail);
             }, options.delay);
+            onInput(self);
         });
+
+        // Displaying the welcome message.
+        showMessage('welcome');
     });
 });

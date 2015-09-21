@@ -14,31 +14,29 @@ body {
     margin-bottom: 40px;
 }
 
+.margin-bottom-sm {
+    margin-bottom: 5px;
+}
+
 /**
  * Anchors properties
  */
 
-.no-link-effect {
-    text-decoration: none;
-    color: inherit;
-}
-
-.no-link-effect:hover {
-    text-decoration: none;
-    color: inherit;
-}
-
 .no-link-effect:focus {
     text-decoration: none;
-    color: inherit;
+    color: white;
 }
 
 .no-link-color {
-    color: inherit;
+    color: white;
 }
 
 .no-link-color:hover {
-    color: inherit;
+    color: white;
+}
+
+.no-link-effect:visited {
+    color: white;
 }
 
 /**
@@ -178,6 +176,7 @@ footer {
   border-radius: 2px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  display: none;
 }
 
 .btn-danger {
