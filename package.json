@@ -4,7 +4,7 @@
   "description": "A promise-based Gravatar client for Node and the browser",
   "main": "lib/index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
