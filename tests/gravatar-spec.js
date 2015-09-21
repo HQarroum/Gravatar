@@ -34,7 +34,7 @@ describe('The gravatar module', function () {
             should.exist(result[0]);
             done();
         }, function (err) {
-            throw new Error(err);
+            done(new Error(err));
         });
     });
 
@@ -47,7 +47,7 @@ describe('The gravatar module', function () {
             url.should.match(urlRegexp);
             done();
         }, function (err) {
-            throw new Error(err);
+            done(new Error(err));
         });
     });
 
@@ -56,7 +56,7 @@ describe('The gravatar module', function () {
      */
     it('should be able to signal an error when avatar resolution failed', function (done) {
         gravatar.resolve('foo').then(function (url) {
-            throw new Error(err);
+            done(new Error());
         }, function (err) {
             done();
         });
