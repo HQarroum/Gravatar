@@ -26,6 +26,10 @@ npm install --save gravatar.js
 bower install --save gravatar.js
 ```
 
+## Sample application
+
+A sample application demonstrating the usage of the library is available [right here](https://hqarroum.github.io/Gravatar/).
+
 ## Description
 
 This library covers most of the accessible interfaces exposed by the [Gravatar service](https://en.gravatar.com/site/implement/) and makes them accessible in the context of a browser or a Node.js application. For features requiring a bit more than simply just returning an URL to an image associated with an e-mail address, this module uses asynchronous requests accessible through a very clear promise-based API.
