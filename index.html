@@ -20,12 +20,9 @@
           </div>
           <div class="modal-body text-center">
             <div class="avatar margin-bottom-md">
-              <img width="130" height="130" src="assets/images/default-avatar.gif" alt="avatar">
+              <img width="130" height="130" src="assets/images/default-avatar.gif" data-default="https://hqarroum.github.io/Gravatar/assets/images/default-avatar.gif" alt="avatar">
             </div>
-            <div>
-              <strong>Halim Qarroum</strong>
-              <div>Address</div>
-            </div>
+            <div class="profile-data"></div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -33,9 +30,34 @@
         </div>
       </div>
     </div>
+    <!-- The profile template -->
+    <script type="script/template" id="profile-template">
+      <table class="table table-bordered table-striped table-responsive">
+        <tr>
+          <td><strong>Id:</strong></td>
+          <td><%- id %></td>
+        </tr>
+        <tr>
+          <td><strong>Username :</strong></td>
+          <td><%- preferredUsername %></td>
+        </tr>
+        <tr>
+          <td><strong>Email :</strong></td>
+          <td><%- email %></td>
+        </tr>
+        <tr>
+          <td><strong>Gravatar Hash :</strong></td>
+          <td><%- hash %></td>
+        </tr>
+        <tr>
+          <td><strong>Profile :</strong></td>
+          <td><a href="<%- profileUrl %>"><%- profileUrl %></a></td>
+        </tr>
+      </table>
+    </script>
     <!-- Cover -->
     <div id="cover">
-        <img src="http://helenebrunet.com/wp-content/uploads/2014/04/Streets-Night-City-Lights.jpg">
+        <img src="assets/images/background.jpg">
         <div id="overlay"></div>
     </div>
     <!-- Main container -->
@@ -61,7 +83,7 @@
             <div class="message success" role="alert">
               <div class="margin-bottom-sm"><strong>Congratulations !</strong> We have successfully resolved your e-mail address</div>
               <div align="center">
-                <u><a class="view-profile" href="#" class="no-link-color" data-toggle="modal" data-target="#profile-modal">View profile</a></u>
+                <u><a class="view-profile no-link-color" href="#" data-toggle="modal" data-target="#profile-modal">View profile</a></u>
               </div>
             </div>
             <div class="message error" role="alert">

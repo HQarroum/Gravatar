@@ -57,29 +57,15 @@ define(['gravatar', 'lodash', 'jquery', 'bootstrap'], function (gravatar, _, $) 
          * The avatar image.
          */
         var image = $('.avatar img');
-        var modal = $('#profile-modal');
-
-        var refreshProfile = function () {
-            if (!!profile) {
-
-            }
-        };
-
-        /**
-         * Loading the user profile.
-         */
-        var loadProfile = function (url) {
-            gravatar.get.profiles(url).then(function (profiles) {
-                profile = profiles[0];
-            });
-        };
+        var template = $('#profile-template');
+        var profileData = $('.profile-data');
 
         /**
          * When the image is loaded, we update the image element.
          */
-        var done = function (url) {
+        var done = function (url, profile) {
             image.attr('src', url);
-            loadProfile(url);
+            profileData.html(_.template(template.html())(profile));
             showMessage('success');
         };
 
@@ -121,18 +107,24 @@ define(['gravatar', 'lodash', 'jquery', 'bootstrap'], function (gravatar, _, $) 
          */
         $('#email').on('input', function () {
             var self = $(this);
+            var value = self.val();
+            var url;
             
             clearTimeout(handle);
             handle = setTimeout(function () {
-                gravatar.resolve(self.val(), options.gravatar)
-                    .then(done)
+                value && gravatar.resolve(value, options.gravatar)
+                    .then(function (imageUrl) {
+                        url = imageUrl;
+                        return gravatar.get.profiles(self.val());
+                    })
+                    .then(function (profiles) {
+                        var p  = profiles[0];
+                        p.email = value;
+                        done(url, p);
+                    })
                     .catch(fail);
             }, options.delay);
             onInput(self);
-        });
-
-        modal.on('shown.bs.modal', function () {
-
         });
 
         // Displaying the welcome message.
