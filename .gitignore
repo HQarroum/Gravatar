@@ -7,9 +7,6 @@ pids
 *.pid
 *.seed
 
-# Build file
-dist/
-
 # Editor
 .idea/
 
