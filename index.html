@@ -1,68 +1,94 @@
-<html>
-<title>Gravatar application</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-<link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<body>
-  <!-- Cover -->
-  <div id="cover">
-      <img src="http://helenebrunet.com/wp-content/uploads/2014/04/Streets-Night-City-Lights.jpg">
-      <div id="overlay"></div>
-  </div>
-  <!-- Main container -->
-  <div class="container">
-    <div class="vertical-center-row">
-      <div class="text-center">
-        <!-- Main title -->
-        <div class="row margin-bottom-md title">
-          <strong>Gravatar</strong>.js
-        </div>
-        <div class="row margin-bottom-md">
-          <div class="avatar">
-            <img width="130" height="130" src="assets/images/default-avatar.gif" data-default="https://hqarroum.github.io/Gravatar/assets/images/default-avatar.gif" alt="avatar">
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Gravatar application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+    <!-- Profile modal -->
+    <div class="modal fade" id="profile-modal" tabindex="-1" role="dialog" aria-labelledby="profile-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Profile</h4>
           </div>
-        </div>
-        <div class="row">
-          <div class="message welcome" role="alert">
-            Enter an e-mail address associated with a Gravatar account.
-          </div>
-          <div class="message typing" role="alert">
-            We take care of updating the avatar as you type in your e-mail address, keep going ...
-          </div>
-          <div class="message success" role="alert">
-            <div class="margin-bottom-sm"><strong>Congratulations !</strong> We have successfully resolved your e-mail address</div>
-            <div align="center">
-              <u><a class="view-profile" href="#" class="no-link-color">View profile</a></u>
+          <div class="modal-body text-center">
+            <div class="avatar margin-bottom-md">
+              <img width="130" height="130" src="assets/images/default-avatar.gif" alt="avatar">
+            </div>
+            <div>
+              <strong>Halim Qarroum</strong>
+              <div>Address</div>
             </div>
           </div>
-          <div class="message error" role="alert">
-            <div><strong>Oops !</strong> It seems like the given e-mail address isn't associated with any Gravatar account.</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>
-        </div>
-        <!-- Form -->
-        <div class="row">
-          <form action="#" method="post" role="form">
-            <div class="form-group">
-              <input id="email" type="email" name="email" class="form-control input rounded-top" placeholder="Enter an e-mail address" autofocus required>
-            </div>
-            <button type="submit" class="btn btn-front btn-danger">Search</button>
-          </form>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Footer -->
-  <footer class="visible-lg">
-    <ul class="list-inline">
-      <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar" target="_blank">Fork me on Github</a></li>
-      <li><a class="no-link-color" href="https://github.com/HQarroum" target="_blank">About the author</a></li>
-      <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar/blob/master/LICENSE" target="_blank">License</a></li>
-    </ul>
-  </footer>
-  <!-- Loading our main page entry point -->
-  <script data-main="assets/js/common.js" src="assets/components/requirejs/require.js"></script>
-</body>
+    <!-- Cover -->
+    <div id="cover">
+        <img src="http://helenebrunet.com/wp-content/uploads/2014/04/Streets-Night-City-Lights.jpg">
+        <div id="overlay"></div>
+    </div>
+    <!-- Main container -->
+    <div class="container">
+      <div class="vertical-center-row">
+        <div class="text-center">
+          <!-- Main title -->
+          <div class="row margin-bottom-md title">
+            <strong>Gravatar</strong>.js
+          </div>
+          <div class="row margin-bottom-md">
+            <div class="avatar">
+              <img width="130" height="130" src="assets/images/default-avatar.gif" data-default="https://hqarroum.github.io/Gravatar/assets/images/default-avatar.gif" alt="avatar">
+            </div>
+          </div>
+          <div class="row">
+            <div class="message welcome" role="alert">
+              Enter an e-mail address associated with a Gravatar account.
+            </div>
+            <div class="message typing" role="alert">
+              We take care of updating the avatar as you type in your e-mail address, keep going ...
+            </div>
+            <div class="message success" role="alert">
+              <div class="margin-bottom-sm"><strong>Congratulations !</strong> We have successfully resolved your e-mail address</div>
+              <div align="center">
+                <u><a class="view-profile" href="#" class="no-link-color" data-toggle="modal" data-target="#profile-modal">View profile</a></u>
+              </div>
+            </div>
+            <div class="message error" role="alert">
+              <div><strong>Oops !</strong> It seems like the given e-mail address isn't associated with any Gravatar account.</div>
+            </div>
+          </div>
+          <!-- Form -->
+          <div class="row">
+            <form action="#" method="post" role="form">
+              <div class="form-group">
+                <input id="email" type="email" name="email" class="form-control input rounded-top" placeholder="Enter an e-mail address" autofocus required>
+              </div>
+              <button type="submit" class="btn btn-front btn-danger">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="visible-lg">
+      <ul class="list-inline">
+        <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar" target="_blank">Fork me on Github</a></li>
+        <li><a class="no-link-color" href="https://github.com/HQarroum" target="_blank">About the author</a></li>
+        <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar/blob/master/LICENSE" target="_blank">License</a></li>
+      </ul>
+    </footer>
+    <!-- Loading our main page entry point -->
+    <script data-main="assets/js/common.js" src="assets/components/requirejs/require.js"></script>
+  </body>
 </html>

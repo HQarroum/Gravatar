@@ -12,7 +12,14 @@ requirejs.config({
         'proxify-url': 'components/proxify-url/lib/index',
         'es6-promise': 'components/es6-promise/promise.min',
         'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min',
-        'bootstrap': 'components/bootstrap/dist/js/bootstrap.min'
+        'bootstrap': 'components/bootstrap/dist/js/bootstrap.min',
+        'lodash': 'components/lodash/lodash.min'
+    },
+
+    shim: {
+        'bootstrap': {
+            deps: [ 'jquery' ]
+        }
     }
 });
 
@@ -20,7 +27,7 @@ requirejs.config({
  * Requiring the common assets for our application,
  * and registering the routes for the AJAX queries.
  */
-define(['gravatar', 'jquery', 'bootstrap'], function (gravatar) {
+define(['gravatar', 'lodash', 'jquery', 'bootstrap'], function (gravatar, _, $) {
     
     var options = {
         /**
@@ -44,17 +51,35 @@ define(['gravatar', 'jquery', 'bootstrap'], function (gravatar) {
     $(function () {
 
         var handle = undefined;
+        var profile  = undefined;
 
         /**
          * The avatar image.
          */
         var image = $('.avatar img');
+        var modal = $('#profile-modal');
+
+        var refreshProfile = function () {
+            if (!!profile) {
+
+            }
+        };
+
+        /**
+         * Loading the user profile.
+         */
+        var loadProfile = function (url) {
+            gravatar.get.profiles(url).then(function (profiles) {
+                profile = profiles[0];
+            });
+        };
 
         /**
          * When the image is loaded, we update the image element.
          */
         var done = function (url) {
             image.attr('src', url);
+            loadProfile(url);
             showMessage('success');
         };
 
@@ -104,6 +129,10 @@ define(['gravatar', 'jquery', 'bootstrap'], function (gravatar) {
                     .catch(fail);
             }, options.delay);
             onInput(self);
+        });
+
+        modal.on('shown.bs.modal', function () {
+
         });
 
         // Displaying the welcome message.
