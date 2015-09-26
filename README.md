@@ -12,6 +12,8 @@ Current version: **1.0.2**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 
+> A sample application demonstrating the usage of the library is available [right here](https://hqarroum.github.io/Gravatar/).
+
 ## Install
 
 ##### Using NPM
@@ -25,10 +27,6 @@ npm install --save gravatar.js
 ```bash
 bower install --save gravatar.js
 ```
-
-## Sample application
-
-A sample application demonstrating the usage of the library is available [right here](https://hqarroum.github.io/Gravatar/).
 
 ## Description
 
