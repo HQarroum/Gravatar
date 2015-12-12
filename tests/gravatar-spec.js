@@ -55,9 +55,9 @@ describe('The gravatar module', function () {
      * Avatar resolution error test.
      */
     it('should be able to signal an error when avatar resolution failed', function (done) {
-        gravatar.resolve('foo').then(function (url) {
+        gravatar.resolve('foo').then(function () {
             done(new Error());
-        }, function (err) {
+        }, function () {
             done();
         });
     });
