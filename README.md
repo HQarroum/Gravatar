@@ -3,16 +3,14 @@
 </p>
 
 # Gravatar
+> A promise-based Gravatar client for Node and the browser. See [demo here](https://hqarroum.github.io/Gravatar/).
+
 [![Build Status](https://travis-ci.org/HQarroum/Gravatar.svg?branch=master)](https://travis-ci.org/HQarroum/Gravatar)
 [![Code Climate](https://codeclimate.com/github/HQarroum/Gravatar/badges/gpa.svg)](https://codeclimate.com/github/HQarroum/Gravatar)
-
-A promise-based Gravatar client for Node and the browser.
 
 Current version: **1.0.2**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
-
-> A sample application demonstrating the usage of the library is available [right here](https://hqarroum.github.io/Gravatar/).
 
 ## Install
 
