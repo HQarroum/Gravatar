@@ -34,7 +34,7 @@ define(['gravatar', 'lodash', 'jquery', 'bootstrap'], function (gravatar, _, $) 
          * The delay in milliseconds to wait
          * before loading the avatar.
          */
-        delay: 2000,
+        delay: 1500,
 
         /**
          * Gravatar specific options.
