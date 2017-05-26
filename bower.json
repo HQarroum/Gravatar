@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "blueimp-md5": "~1.1.1",
-    "popsicle": "~1.1.0",
-    "proxify-url": "~1.0.0"
+    "proxify-url": "~1.0.0",
+    "isomorphic-fetch": "^2.2.1"
   }
 }
