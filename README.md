@@ -30,6 +30,8 @@ bower install --save gravatar.js
 
 This library covers most of the accessible interfaces exposed by the [Gravatar service](https://en.gravatar.com/site/implement/) and makes them accessible in the context of a browser or a Node.js application. For features requiring a bit more than simply just returning an URL to an image associated with an e-mail address, this module uses asynchronous requests accessible through a promise-based API to resolve remote resources.
 
+> You must bring your own ES6 Promise compatible polyfill, I suggest [es6-promise](https://github.com/jakearchibald/es6-promise).
+
 ## Usage
 
 ### Requiring the library
@@ -60,7 +62,7 @@ You will need to include the Gravatar library as well as its dependencies in ord
 <!-- This example assumes you installed the library using Bower -->
 <script src="bower_components/proxify-url/lib/index.js"></script>
 <script src="bower_components/blueimp-md5/js/md5.min.js"></script>
-<script src="bower_components/popsicle/popsicle.js"></script>
+<script src="bower_components/fetch/fetch.js"></script>
 <script src="bower_components/gravatar.js/lib/index.js"></script>
 ```
 
