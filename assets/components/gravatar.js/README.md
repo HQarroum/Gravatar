@@ -3,12 +3,12 @@
 </p>
 
 # Gravatar
+> A promise-based Gravatar client for Node and the browser. See [demo here](https://hqarroum.github.io/Gravatar/).
+
 [![Build Status](https://travis-ci.org/HQarroum/Gravatar.svg?branch=master)](https://travis-ci.org/HQarroum/Gravatar)
 [![Code Climate](https://codeclimate.com/github/HQarroum/Gravatar/badges/gpa.svg)](https://codeclimate.com/github/HQarroum/Gravatar)
 
-A promise-based Gravatar client for Node and the browser.
-
-Current version: **1.0.2**
+Current version: **1.0.3**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 
@@ -28,9 +28,9 @@ bower install --save gravatar.js
 
 ## Description
 
-This library covers most of the accessible interfaces exposed by the [Gravatar service](https://en.gravatar.com/site/implement/) and makes them accessible in the context of a browser or a Node.js application. For features requiring a bit more than simply just returning an URL to an image associated with an e-mail address, this module uses asynchronous requests accessible through a very clear promise-based API.
+This library covers most of the accessible interfaces exposed by the [Gravatar service](https://en.gravatar.com/site/implement/) and makes them accessible in the context of a browser or a Node.js application. For features requiring a bit more than simply just returning an URL to an image associated with an e-mail address, this module uses asynchronous requests accessible through a promise-based API to resolve remote resources.
 
-The [`es6-promise`](https://www.npmjs.com/package/es6-promise) module is used throughout this module so it should not be problematic to bind the promises returned by this module with any Promises/A+ compliant library.
+> You must bring your own ES6 Promise compatible polyfill, I suggest [es6-promise](https://github.com/jakearchibald/es6-promise).
 
 ## Usage
 
@@ -62,8 +62,7 @@ You will need to include the Gravatar library as well as its dependencies in ord
 <!-- This example assumes you installed the library using Bower -->
 <script src="bower_components/proxify-url/lib/index.js"></script>
 <script src="bower_components/blueimp-md5/js/md5.min.js"></script>
-<script src="bower_components/es6-promise-polyfill/promise.min.js"></script>
-<script src="bower_components/popsicle/popsicle.js"></script>
+<script src="bower_components/fetch/fetch.js"></script>
 <script src="bower_components/gravatar.js/lib/index.js"></script>
 ```
 

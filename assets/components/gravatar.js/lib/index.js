@@ -1,7 +1,7 @@
 /**
- * ////////////////////////////////////////
- * ////////// Gravatar  module ////////////
- * ////////////////////////////////////////
+ * ///////////////////////////////////////
+ * ////////// Gravatar module ////////////
+ * ///////////////////////////////////////
  *
  * This module offers object caching mechanisms for
  * third-party modules. It also allows to set a time-to-live
@@ -15,17 +15,16 @@
  (function (name, definition) {
     if (typeof define === 'function' && define.amd) {
         // Defining the module in an AMD fashion.
-        define(['blueimp-md5', 'es6-promise', 'popsicle', 'proxify-url'], definition);
+        define(['blueimp-md5', 'isomorphic-fetch', 'proxify-url'], definition);
     } else if (typeof module !== 'undefined' && module.exports) {
         // Exporting the module for Node.js/io.js.
         module.exports = definition(
           require('blueimp-md5').md5,
-          require('es6-promise'),
-          require('popsicle'),
+          require('isomorphic-fetch'),
           require('proxify-url')
         );
     } else {
-        var instance = definition(this.md5, this.ES6Promise, this.popsicle, this.proxify);
+        var instance = definition(this.md5, this.fetch, this.proxify);
         var old      = this[name];
 
         /**
@@ -38,13 +37,8 @@
         };
         this[name] = instance;
     }
- })('gravatar', function (md5, es6, popsicle, proxify) {
-  
-  /**
-   * Polyfill ES6 Promise.
-   */
-  es6.polyfill();
-     
+ })('gravatar', function (md5, fetch, proxify) {
+
   /**
    * The Gravatar service base URL.
    */
@@ -73,6 +67,14 @@
      * Defines the size of the image in pixels.
      */
     size: '80'
+  };
+
+  /**
+   * Shorthand function to use with the fetch API
+   * to obtain a JSON payload from a reponse.
+   */
+  var toJson = function (res) {
+    return (res.json());
   };
 
   /**
@@ -147,16 +149,13 @@
       profiles: function (email) {
         var url = profileUrl(email, { format: 'json' });
 
-        return new Promise(function (resolve, reject) {
-          popsicle.get(url).then(function (response) {
-            var query = response.body.query;
-            if (response.status === 200 && query.count > 0) {
-              resolve(query.results.json.entry);
-            } else {
-              reject('Unexpected response');
-            }
-          }, reject);
-        });
+        return fetch(url)
+          .then(toJson)
+          .then(function (data) {
+            return (data.query.count > 0) ?
+              Promise.resolve(data.query.results.json.entry) :
+              Promise.reject('Unexpected response');
+          });
       }
     },
 
@@ -171,14 +170,10 @@
     resolve: function (email, options) {
       var url = this.get.url(email, options);
 
-      return new Promise(function (resolve, reject) {
-        popsicle.head(url).then(function (response) {
-	  if (response.status === 200) {
-	    resolve(url);
-	  } else {
-            reject('Avatar does not exist');
-	  }
-        }, reject);
+      return fetch(url, { method: 'HEAD' }).then(function (response) {
+        return (response.status === 200) ?
+          Promise.resolve(url) :
+          Promise.reject('Avatar does not exist');
       });
     }
   };

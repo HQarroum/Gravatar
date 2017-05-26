@@ -8,9 +8,8 @@ requirejs.config({
     paths: {
         'gravatar': 'components/gravatar.js/lib/index',
         'blueimp-md5': 'components/blueimp-md5/js/md5.min',
-        'popsicle': 'components/popsicle/popsicle',
+        'isomorphic-fetch': 'components/fetch/fetch',
         'proxify-url': 'components/proxify-url/lib/index',
-        'es6-promise': 'components/es6-promise/promise.min',
         'jquery': 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min',
         'bootstrap': 'components/bootstrap/dist/js/bootstrap.min',
         'lodash': 'components/lodash/lodash.min'
@@ -19,6 +18,9 @@ requirejs.config({
     shim: {
         'bootstrap': {
             deps: [ 'jquery' ]
+        },
+        'isomorphic-fetch': {
+            exports: 'fetch'
         }
     }
 });
@@ -28,7 +30,7 @@ requirejs.config({
  * and registering the routes for the AJAX queries.
  */
 define(['gravatar', 'lodash', 'jquery', 'bootstrap'], function (gravatar, _, $) {
-    
+
     var options = {
         /**
          * The delay in milliseconds to wait
@@ -109,7 +111,7 @@ define(['gravatar', 'lodash', 'jquery', 'bootstrap'], function (gravatar, _, $) 
             var self = $(this);
             var value = self.val();
             var url;
-            
+
             clearTimeout(handle);
             handle = setTimeout(function () {
                 value && gravatar.resolve(value, options.gravatar)
