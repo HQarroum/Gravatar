@@ -27,7 +27,6 @@
   ],
   "dependencies": {
     "blueimp-md5": "~1.1.1",
-    "es6-promise": "~3.0.2",
     "popsicle": "~1.1.0",
     "proxify-url": "~1.0.0"
   }

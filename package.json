@@ -4,7 +4,9 @@
   "description": "A promise-based Gravatar client for Node and the browser",
   "main": "lib/index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "grunt",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,6 @@
   },
   "dependencies": {
     "blueimp-md5": "^1.1.1",
-    "es6-promise": "^3.0.2",
     "popsicle": "^1.1.0",
     "proxify-url": "^1.0.0"
   },
