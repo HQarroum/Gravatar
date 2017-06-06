@@ -3,6 +3,8 @@
 </p>
 
 # Gravatar
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/HQarroum/Gravatar.svg)](https://greenkeeper.io/)
 > A promise-based Gravatar client for Node and the browser. See [demo here](https://hqarroum.github.io/Gravatar/).
 
 [![Build Status](https://travis-ci.org/HQarroum/Gravatar.svg?branch=master)](https://travis-ci.org/HQarroum/Gravatar)
