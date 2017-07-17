@@ -8,6 +8,6 @@ before_install:
 install:
   - npm install
 script:
-  - npm test
+  - npm run build
   - istanbul cover ./node_modules/mocha/bin/_mocha tests --reporter lcovonly
   - codecov
