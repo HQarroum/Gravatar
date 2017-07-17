@@ -1,6 +1,6 @@
 {
   "name": "gravatar.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A promise-based Gravatar client for Node and the browser",
   "main": "lib/index.js",
   "scripts": {
