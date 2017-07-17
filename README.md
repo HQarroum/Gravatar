@@ -8,7 +8,7 @@
 [![Build Status](https://travis-ci.org/HQarroum/Gravatar.svg?branch=master)](https://travis-ci.org/HQarroum/Gravatar)
 [![Code Climate](https://codeclimate.com/github/HQarroum/Gravatar/badges/gpa.svg)](https://codeclimate.com/github/HQarroum/Gravatar)
 
-Current version: **1.0.3**
+Current version: **1.0.4**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqm.post@gmail.com)
 
