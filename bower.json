@@ -1,6 +1,6 @@
 {
   "name": "gravatar.js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "homepage": "https://github.com/HQarroum/Gravatar",
   "authors": [
     "Halim Qarroum <hqm.post@gmail.com>"
@@ -26,8 +26,6 @@
     "tests"
   ],
   "dependencies": {
-    "blueimp-md5": "~1.1.1",
-    "proxify-url": "~1.0.0",
-    "isomorphic-fetch": "^2.2.1"
+    "blueimp-md5": "~1.1.1"
   }
 }
