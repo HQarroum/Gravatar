@@ -7,6 +7,7 @@
 
 [![Build Status](https://travis-ci.org/HQarroum/Gravatar.svg?branch=master)](https://travis-ci.org/HQarroum/Gravatar)
 [![Code Climate](https://codeclimate.com/github/HQarroum/Gravatar/badges/gpa.svg)](https://codeclimate.com/github/HQarroum/Gravatar)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHQarroum%2FGravatar.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHQarroum%2FGravatar?ref=badge_shield)
 
 Current version: **1.0.4**
 
@@ -117,3 +118,7 @@ gravatar.resolve('foo@bar').then(function (url) {
 ```
 
 > Similarly to when you generate an URL, you can pass an optional object as a second argument to the `.resolve` method in order to specify how you would like the avatar to be resolved. If the avatar has been resolved, it will be passed as an argument to the success callback.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHQarroum%2FGravatar.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHQarroum%2FGravatar?ref=badge_large)
