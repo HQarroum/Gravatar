@@ -19,7 +19,7 @@ export default [
       format: 'esm',
       esModule: true,
       exports: 'named',
-      //plugins: [terser()]
+      plugins: [terser()]
     },
     external: [...builtinModules, ...Object.keys(dependencies)]
   },
