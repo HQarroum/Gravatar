@@ -1,4 +1,4 @@
-import gravatar from 'https://raw.githubusercontent.com/HQarroum/Gravatar/gh-pages/node_modules/gravatar.js/dist/index.esm.js'
+import gravatar from 'https://unpkg.com/gravatar.js@2.0.0/dist/index.esm.js'
 
 const options = {
 
