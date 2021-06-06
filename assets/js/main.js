@@ -1,4 +1,4 @@
-import gravatar from '/node_modules/gravatar.js/dist/index.esm.js'
+import gravatar from '/Gravatar/node_modules/gravatar.js/dist/index.esm.js'
 
 const options = {
 
