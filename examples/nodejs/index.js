@@ -1,14 +1,14 @@
-const gravatar = require('../..');
+import gravatar from '../../lib/index.js';
 
 // The e-mail address of a user.
 const email = 'example@example.com';
 
 (async () => {
   // The URL of the avatar.
-  console.log(await gravatar.get.url(email));
+  console.log(await gravatar.url(email));
 
   // The profiles of the user.
-  console.log(await gravatar.get.profiles(email));
+  console.log(await gravatar.profiles(email));
 
   try {
     console.log(await gravatar.resolve(email));
