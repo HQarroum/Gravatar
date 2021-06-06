@@ -4,10 +4,10 @@ node_js:
   - '14'
   - '16'
 before_install:
-  - npm install -g istanbul codecov
+  - npm install -g codecov
 install:
   - npm install
 script:
   - npm run build
-  - istanbul cover ./node_modules/mocha/bin/_mocha tests --reporter lcovonly
+  - npm run coverage
   - codecov

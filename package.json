@@ -15,6 +15,7 @@
   "scripts": {
     "test": "npx cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "build": "npx rollup -c",
+    "coverage": "npx cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage",
     "prepublishOnly": "npm run build && npm run test"
   },
   "repository": {
