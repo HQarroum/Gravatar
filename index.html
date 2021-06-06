@@ -1,114 +1,130 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Gravatar application</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-    <link rel="stylesheet" href="assets/components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  <body>
-    <!-- Profile modal -->
-    <div class="modal fade" id="profile-modal" tabindex="-1" role="dialog" aria-labelledby="profile-modal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Profile</h4>
+
+<head>
+  <title>Gravatar application</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!-- Profile modal -->
+  <div class="modal fade" id="profile-modal" tabindex="-1" role="dialog" aria-labelledby="profile-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Profile</h4>
+        </div>
+        <div class="modal-body text-center">
+          <div class="avatar margin-bottom-md">
+            <img width="130" height="130" src="assets/images/default-avatar.gif"
+              data-default="https://hqarroum.github.io/Gravatar/assets/images/default-avatar.gif" alt="avatar">
           </div>
-          <div class="modal-body text-center">
-            <div class="avatar margin-bottom-md">
-              <img width="130" height="130" src="assets/images/default-avatar.gif" data-default="https://hqarroum.github.io/Gravatar/assets/images/default-avatar.gif" alt="avatar">
-            </div>
-            <div class="profile-data"></div>
+          <div class="profile-data">
+            <table class="table table-bordered table-striped table-responsive">
+              <tr>
+                <td><strong>Id:</strong></td>
+                <td id="profile-id">foo</td>
+              </tr>
+              <tr>
+                <td><strong>Username :</strong></td>
+                <td id="profile-preferredUsername"></td>
+              </tr>
+              <tr>
+                <td><strong>Email :</strong></td>
+                <td id="profile-email"></td>
+              </tr>
+              <tr>
+                <td><strong>Gravatar Hash :</strong></td>
+                <td id="profile-hash"></td>
+              </tr>
+              <tr>
+                <td><strong>Profile :</strong></td>
+                <td><a id="profile-url" target="_blank"></a></td>
+              </tr>
+            </table>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
-    <!-- The profile template -->
-    <script type="script/template" id="profile-template">
-      <table class="table table-bordered table-striped table-responsive">
-        <tr>
-          <td><strong>Id:</strong></td>
-          <td><%- id %></td>
-        </tr>
-        <tr>
-          <td><strong>Username :</strong></td>
-          <td><%- preferredUsername %></td>
-        </tr>
-        <tr>
-          <td><strong>Email :</strong></td>
-          <td><%- email %></td>
-        </tr>
-        <tr>
-          <td><strong>Gravatar Hash :</strong></td>
-          <td><%- hash %></td>
-        </tr>
-        <tr>
-          <td><strong>Profile :</strong></td>
-          <td><a href="<%- profileUrl %>" target="_blank"><%- profileUrl %></a></td>
-        </tr>
-      </table>
-    </script>
-    <!-- Cover -->
-    <div id="cover">
-        <img src="assets/images/background.jpg">
-        <div id="overlay"></div>
-    </div>
-    <!-- Main container -->
-    <div class="container">
-      <div class="vertical-center-row">
-        <div class="text-center">
-          <!-- Main title -->
-          <div class="row margin-bottom-md title">
-            <strong>Gravatar</strong>.js
+  </div>
+  <!-- Cover -->
+  <div id="cover">
+    <img src="assets/images/background.jpg">
+    <div id="overlay"></div>
+  </div>
+  <!-- Main container -->
+  <div class="container">
+    <div class="vertical-center-row">
+      <div class="text-center">
+        <!-- Main title -->
+        <div class="row margin-bottom-md title">
+          <strong>Gravatar</strong>.js
+        </div>
+        <div class="row margin-bottom-md">
+          <div class="avatar">
+            <img width="130" height="130" src="assets/images/default-avatar.gif"
+              data-default="https://hqarroum.github.io/Gravatar/assets/images/default-avatar.gif" alt="avatar">
           </div>
-          <div class="row margin-bottom-md">
-            <div class="avatar">
-              <img width="130" height="130" src="assets/images/default-avatar.gif" data-default="https://hqarroum.github.io/Gravatar/assets/images/default-avatar.gif" alt="avatar">
+        </div>
+        <div class="row">
+          <div class="message welcome" role="alert">
+            Enter an e-mail address associated with a Gravatar account.
+          </div>
+          <div class="message typing" role="alert">
+            We take care of updating the avatar as you type in your e-mail address, keep going ...
+          </div>
+          <div class="message success" role="alert">
+            <div class="margin-bottom-sm"><strong>Awesome !</strong> We have successfully resolved your e-mail address
+            </div>
+            <div align="center">
+              <u><a class="view-profile no-link-color" href="#" data-toggle="modal" data-target="#profile-modal">View
+                  profile</a></u>
             </div>
           </div>
-          <div class="row">
-            <div class="message welcome" role="alert">
-              Enter an e-mail address associated with a Gravatar account.
-            </div>
-            <div class="message typing" role="alert">
-              We take care of updating the avatar as you type in your e-mail address, keep going ...
-            </div>
-            <div class="message success" role="alert">
-              <div class="margin-bottom-sm"><strong>Awesome !</strong> We have successfully resolved your e-mail address</div>
-              <div align="center">
-                <u><a class="view-profile no-link-color" href="#" data-toggle="modal" data-target="#profile-modal">View profile</a></u>
-              </div>
-            </div>
-            <div class="message error" role="alert">
-              <div><strong>Oops !</strong> It seems like the given e-mail address isn't associated with any Gravatar account.</div>
-            </div>
+          <div class="message error" role="alert">
+            <div><strong>Oops !</strong> It seems like the given e-mail address isn't associated with any Gravatar
+              account.</div>
           </div>
-          <!-- Form -->
-          <div class="row">
-            <div class="form-group">
-              <input id="email" type="email" name="email" class="form-control input rounded-top" placeholder="Enter an e-mail address" autofocus required>
-            </div>
-            <button type="submit" class="btn btn-front btn-danger">Search</button>
+        </div>
+        <!-- Form -->
+        <div class="row">
+          <div class="form-group">
+            <input id="email" type="email" name="email" class="form-control input rounded-top"
+              placeholder="Enter an e-mail address" autofocus required>
           </div>
+          <button type="submit" class="btn btn-front btn-danger">Search</button>
         </div>
       </div>
     </div>
-    <!-- Footer -->
-    <footer class="visible-lg">
-      <ul class="list-inline">
-        <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar" target="_blank">Fork me on Github</a></li>
-        <li><a class="no-link-color" href="https://github.com/HQarroum" target="_blank">About the author</a></li>
-        <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar/blob/master/LICENSE" target="_blank">License</a></li>
-      </ul>
-    </footer>
-    <!-- Loading our main page entry point -->
-    <script data-main="assets/js/common.js" src="assets/components/requirejs/require.js"></script>
-  </body>
+  </div>
+  <!-- Footer -->
+  <footer class="visible-lg">
+    <ul class="list-inline">
+      <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar" target="_blank">Fork me on Github</a>
+      </li>
+      <li><a class="no-link-color" href="https://github.com/HQarroum" target="_blank">About the author</a></li>
+      <li><a class="no-link-color" href="https://github.com/HQarroum/Gravatar/blob/master/LICENSE"
+          target="_blank">License</a></li>
+    </ul>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+    integrity="sha512-DUC8yqWf7ez3JD1jszxCWSVB0DMP78eOyBpMa5aJki1bIRARykviOuImIczkxlj1KhVSyS16w2FSQetkD4UU2w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Loading our main page entry point -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+
 </html>

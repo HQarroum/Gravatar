@@ -1,0 +1,25 @@
+{
+  "name": "gravatar-example",
+  "version": "2.0.0",
+  "description": "An example of the Gravatar library.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HQarroum/Gravatar.git"
+  },
+  "keywords": [
+    "gravatar",
+    "avatar"
+  ],
+  "author": "Halim Qarroum <hqm.post@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HQarroum/Gravatar/issues"
+  },
+  "homepage": "https://github.com/HQarroum/Gravatar#readme",
+  "dependencies": {
+    "gravatar.js": "^2.0.0"
+  }
+}
