@@ -41,7 +41,7 @@ const gravatar = require('gravatar.js');
 #### Browser (ESM)
 
 ```javascript
-import gravatar from 'https://esm.sh/gravatar.js/dist/index.esm.js'
+import gravatar from 'https://unpkg.com/gravatar.js/dist/index.esm.js'
 ```
 
 #### Browser (UMD)
