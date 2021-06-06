@@ -47,7 +47,7 @@ import gravatar from 'https://unpkg.com/gravatar.js/dist/index.esm.js'
 #### Browser (UMD)
 
 ```javascript
-<script src="./dist/index.umd.js"></script>
+<script src="https://unpkg.com/gravatar.js/dist/index.umd.js"></script>
 ```
 
 ### Associating an e-mail with an avatar
