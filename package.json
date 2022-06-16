@@ -39,7 +39,7 @@
     "url": "https://github.com/HQarroum/Gravatar/issues"
   },
   "dependencies": {
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
